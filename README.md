@@ -8,9 +8,9 @@ A simple, responsive calculator inspired by the Calculator app included with iPh
 - Keep the interface clear, quick, and accessible.
 - Build the project in small steps so the app and the tools behind it are understandable.
 
-## Planned features
+## First version
 
-The first version will focus on a standard calculator:
+The first version includes a standard calculator:
 
 - Addition, subtraction, multiplication, and division
 - Decimal numbers and negative values
@@ -18,7 +18,7 @@ The first version will focus on a standard calculator:
 - A readable display and responsive button layout
 - Basic keyboard input on devices with a physical keyboard
 
-The exact behavior of percent, repeated equals, and clearing will be settled during implementation. The goal is familiar iPhone-style behavior, without copying Apple's branding or assets.
+The calculator supports chained operations, repeated equals, percent, sign change, and clear. Percent follows the familiar calculator pattern: for example, 10% of 200 can be added to 200. The goal is a familiar mobile-calculator feel, without copying Apple's branding or assets.
 
 ## Technology
 
@@ -31,23 +31,21 @@ Basic calculator operations can run in the browser and do not require a server o
 
 ## Getting started
 
-Setup instructions will be added once the Next.js project has been created. The expected local workflow will be:
+You need Node.js 20.9 or later and npm. From the project folder, run:
 
-1. Install the project dependencies.
-2. Configure any required environment variables in a local .env.local file.
-3. Start the development server.
-4. Open the local URL shown in the terminal.
+```bash
+npm install
+npm run dev
+```
 
-Never commit Supabase secrets or other private credentials to GitHub. A .env.example file should document variable names without containing real values.
+Then open [http://localhost:3000](http://localhost:3000). The first version does not need Supabase credentials because its calculations happen in the browser. If we add a database feature later, keep secrets in a local `.env.local` file and configure production values in Vercel. Never commit private credentials to GitHub.
 
 ## Development roadmap
 
-1. Confirm the first-release behavior and visual direction.
-2. Create the Next.js app and initialize Git.
-3. Build and refine the calculator interface and calculation logic.
-4. Decide whether the first release needs Supabase-backed history or preferences.
-5. Push the project to GitHub and connect the repository to Vercel.
-6. Configure production environment variables and deploy.
+1. Refine the calculator behavior and visual details.
+2. Commit the local project and push it to the existing GitHub repository.
+3. Decide whether to add saved history or preferences with Supabase.
+4. Connect GitHub to Vercel and deploy the app.
 
 ## Deployment
 
@@ -55,12 +53,12 @@ The planned deployment is through Vercel, connected to the GitHub repository. Ch
 
 ## Questions to settle
 
-These choices are not blockers for getting started; the defaults below provide a reasonable first version:
+These choices are not blockers; the defaults below provide a reasonable first version:
 
 - **Name:** “Pocket Calculator” is a working title.
 - **Look and feel:** A clean, dark, phone-friendly layout inspired by familiar mobile calculators.
 - **First release:** A basic calculator with no account requirement. Saved history can be added later with Supabase if wanted.
-- **Calculator details:** Standard arithmetic, with iPhone-like percent and clear behavior to be confirmed while building.
+- **Calculator details:** Standard arithmetic, iPhone-like percent behavior, and a clear button.
 
 ## License
 
